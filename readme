@@ -65,3 +65,38 @@ b. 语法分析器⽣成器 Bison（Yacc的升级版）的官⽹:http://www.gnu.
 2. ANTLR（ANother Tool for Language Recognition）
 a. ⼀种包括词法分析、语法分析、中间代码⽣成、优化、⽬标代码⽣成的编译器⽣成⼯具
 b. 官⽹：https://www.antlr.org
+
+
+
+
+
+
+
+
+
+
+
+中间代码定义如下：
+
+| 序号 | 代码            | 说明                          |
+| ---- | --------------- | ----------------------------- |
+| 1    | OPR 0 0         | 过程结束标识                  |
+| 2    | OPR 0 1         | 单目运算符：-                 |
+| 3    | OPR 0 2         | +                             |
+| 4    | OPR 0 3         | -                             |
+| 5    | OPR 0 4         | *                             |
+| 6    | OPR 0 5         | /                             |
+| 7    | OPR 0 8         | eq                            |
+| 8    | OPR 0 9         | neq                           |
+| 9    | OPR 0 10        | <                             |
+| 10   | OPR 0 11        | >=                            |
+| 11   | OPR 0 12        | >                             |
+| 12   | OPR 0 13        | <=                            |
+| 13   | INI 0 volume    | 初始化空间，volume为3+var个数 |
+| 14   | JMP 0 ADD       | 无条件跳转到ADD               |
+| 15   | LOD LEV OFFSET  | 间址取数                      |
+| 16   | STO LEV OFFSET  | 间址存数                      |
+| 17   | LIT 0 NUM       | 取立即数                      |
+| 18   | JPC 0 ADD       | if或while的真出口             |
+| 19   | CALL LEV OFFSET | 过程调用                      |
+
